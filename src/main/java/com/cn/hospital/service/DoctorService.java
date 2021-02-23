@@ -11,4 +11,31 @@ public interface DoctorService {
      */
    public  PageUtils findAllDoctor(HashMap<String,Object> params);
 
+    /**
+     * 根据科室查找医生
+     * @param params
+     * @return
+     */
+   public  PageUtils findDoctorByKeshi(HashMap<String,Object> params);
+
+    /**
+     * 模糊查询
+     * @param params
+     * @return
+     */
+    public PageUtils fuzzySearch(HashMap<String, Object> params);
+
+    /**
+     *增加浏览次数
+     * @param id
+     * @return
+     */
+    public boolean addLiulancishu(int id);
+
+    /**
+     * 计算评分
+     * @param id
+     * @return
+     */
+   public  boolean calculatePingfen(int id,int score);
 }

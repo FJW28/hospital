@@ -7,4 +7,24 @@
     <select id="findAllDoctor" resultType="com.cn.hospital.pojo.Doctor">
         select * from doctor
     </select>
+
+    <select id="findDoctorByKeshi" parameterType="string" resultType="com.cn.hospital.pojo.Doctor">
+        select * from doctor where keshi=#{value}
+    </select>
+
+    <select id="fuzzySearch" parameterType="string" resultType="com.cn.hospital.pojo.Doctor">
+        select * from doctor where shanchang like concat('%',#{value},'%')
+    </select>
+
+    <update id="addLiulancishu" parameterType="int">
+        update doctor set liulancishu =liulancishu +1 where id =#{value}
+    </update>
+
+    <select id="findById" parameterType="int" resultType="com.cn.hospital.pojo.Doctor">
+        select * from doctor where id =#{value}
+    </select>
+
+   <update id="updateScore">
+       update doctor set yishengpingfen= #{avg},pingfenrenshu=pingfenrenshu + 1 where id=#{id}
+   </update>
 </mapper>
