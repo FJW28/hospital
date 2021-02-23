@@ -69,6 +69,8 @@ public class DoctorController {
     @RequestMapping("/calculatePingfen")
     @ResponseBody
     public HashMap<String,Object> calculatePingfen(int id,int score){
+        System.out.println(id);
+        System.out.println(score);
         boolean flag=doctorService.calculatePingfen(id,score);
         HashMap<String,Object> result=new HashMap<>();
         if(flag){

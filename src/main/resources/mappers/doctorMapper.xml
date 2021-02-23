@@ -25,6 +25,6 @@
     </select>
 
    <update id="updateScore">
-       update doctor set yishengpingfen= #{avg},pingfenrenshu=pingfenrenshu + 1 where id=#{id}
+       update doctor set yishengpingfen= #{avg},pingfenrenshu=pingfenrenshu + 1 where id= #{id}
    </update>
 </mapper>

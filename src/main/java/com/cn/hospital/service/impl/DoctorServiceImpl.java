@@ -64,7 +64,8 @@ public class DoctorServiceImpl implements DoctorService {
     public boolean calculatePingfen(int id,int score) {
         boolean result =false;
         Doctor doctor=doctorDao.findById(id);
-        double avg1=(doctor.getYishengpingfen()*doctor.getPingfenrenshu()+score) /doctor.getPingfenrenshu()+1;
+        double avg1=(doctor.getYishengpingfen()*doctor.getPingfenrenshu()+score) /(doctor.getPingfenrenshu()+1);
+        System.out.println(avg1);
         int i=doctorDao.updateScore(id,avg1);
         if(i>0){
             result=true;
