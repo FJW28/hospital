@@ -35,4 +35,11 @@
     <select id="findAllPingLun" parameterType="int" resultType="com.cn.hospital.pojo.PingLun">
         select * from pinglun where yishengID = #{value} order by createTime desc
     </select>
+
+    <select id="findIllness" parameterType="string" resultType="com.cn.hospital.pojo.JiBing">
+        select  * from jibing where xiangguanzhengzhuang like concat
+        <foreach collection="list" item="xiangguanzhengzhuang" open="('%'," close=",'%')" separator="'%'">
+            #{xiangguanzhengzhuang}
+        </foreach>
+    </select>
 </mapper>

@@ -1,6 +1,7 @@
 package com.cn.hospital.dao;
 
 import com.cn.hospital.pojo.Doctor;
+import com.cn.hospital.pojo.JiBing;
 import com.cn.hospital.pojo.PingLun;
 import org.apache.ibatis.annotations.Param;
 
@@ -23,4 +24,6 @@ public interface DoctorDao {
     public int CommentDoctor(PingLun pingLun);
 
     public List<PingLun> findAllPingLun(int yishengID);
+
+    List<JiBing> findIllness(List<String> illnessList);
 }

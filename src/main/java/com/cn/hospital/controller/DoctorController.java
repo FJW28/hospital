@@ -104,6 +104,13 @@ public class DoctorController {
     }
 
 
+    @RequestMapping("/findIllness")
+    @ResponseBody
+    public PageUtils findIllness(@RequestBody HashMap<String,Object> params){
+        //System.out.println(params);
+        return doctorService.findIllness(params);
+
+    }
 
 
 

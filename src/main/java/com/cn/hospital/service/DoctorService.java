@@ -50,4 +50,6 @@ public interface DoctorService {
     public boolean CommentDoctor(PingLun pingLun);
 
     public List<PingLun> findAllPingLun(int yishengID);
+
+    public PageUtils findIllness(HashMap<String, Object> params);
 }
