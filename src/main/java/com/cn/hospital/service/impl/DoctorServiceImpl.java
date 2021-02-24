@@ -4,6 +4,7 @@ import com.cn.hospital.dao.DoctorDao;
 import com.cn.hospital.pojo.Doctor;
 import com.cn.hospital.pojo.PingLun;
 import com.cn.hospital.service.DoctorService;
+import com.cn.hospital.util.JDK8DateUtil;
 import com.cn.hospital.util.PageUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 
@@ -76,6 +78,20 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public boolean CommentDoctor(PingLun pingLun) {
-        return false;
+        boolean result=false;
+
+        String time2String = JDK8DateUtil.LocalDateTime2String(LocalDateTime.now(), "yyy-MM-dd HH:mm:ss");
+        pingLun.setCreateTime(time2String);
+        int i=doctorDao.CommentDoctor(pingLun);
+        if(i>0){
+            result=true;
+        }
+        return result;
+    }
+
+    @Override
+    public List<PingLun> findAllPingLun(int yishengID) {
+
+        return doctorDao.findAllPingLun(yishengID);
     }
 }

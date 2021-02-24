@@ -4,6 +4,7 @@ import com.cn.hospital.pojo.PingLun;
 import com.cn.hospital.util.PageUtils;
 
 import java.util.HashMap;
+import java.util.List;
 
 public interface DoctorService {
     /**
@@ -47,4 +48,6 @@ public interface DoctorService {
      * @return
      */
     public boolean CommentDoctor(PingLun pingLun);
+
+    public List<PingLun> findAllPingLun(int yishengID);
 }
