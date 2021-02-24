@@ -1,5 +1,6 @@
 package com.cn.hospital.controller;
 
+import com.cn.hospital.pojo.PingLun;
 import com.cn.hospital.service.DoctorService;
 import com.cn.hospital.util.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +80,19 @@ public class DoctorController {
             result.put("mark","0");
         }
        return result;
+    }
+
+    @RequestMapping("/CommentDoctor")
+    @ResponseBody
+    public HashMap<String,Object> CommentDoctor(@RequestBody PingLun pingLun){
+        boolean flag=doctorService.CommentDoctor(pingLun);
+        HashMap<String,Object> result=new HashMap<>();
+        if(flag){
+            result.put("mark","1");
+        }else {
+            result.put("mark","0");
+        }
+        return result;
     }
 
 

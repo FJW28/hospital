@@ -2,6 +2,7 @@ package com.cn.hospital.service.impl;
 
 import com.cn.hospital.dao.DoctorDao;
 import com.cn.hospital.pojo.Doctor;
+import com.cn.hospital.pojo.PingLun;
 import com.cn.hospital.service.DoctorService;
 import com.cn.hospital.util.PageUtils;
 import com.github.pagehelper.PageHelper;
@@ -71,5 +72,10 @@ public class DoctorServiceImpl implements DoctorService {
             result=true;
         }
         return result;
+    }
+
+    @Override
+    public boolean CommentDoctor(PingLun pingLun) {
+        return false;
     }
 }

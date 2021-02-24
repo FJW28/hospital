@@ -1,5 +1,6 @@
 package com.cn.hospital.service;
 
+import com.cn.hospital.pojo.PingLun;
 import com.cn.hospital.util.PageUtils;
 
 import java.util.HashMap;
@@ -38,4 +39,12 @@ public interface DoctorService {
      * @return
      */
    public  boolean calculatePingfen(int id,int score);
+
+
+    /**
+     * 评价医生
+     * @param pingLun
+     * @return
+     */
+    public boolean CommentDoctor(PingLun pingLun);
 }
