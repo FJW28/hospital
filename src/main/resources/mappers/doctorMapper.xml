@@ -5,15 +5,15 @@
 <mapper namespace="com.cn.hospital.dao.DoctorDao">
 
     <select id="findAllDoctor" resultType="com.cn.hospital.pojo.Doctor">
-        select * from doctor
+        select * from doctor order by yishengpingfen desc
     </select>
 
     <select id="findDoctorByKeshi" parameterType="string" resultType="com.cn.hospital.pojo.Doctor">
-        select * from doctor where keshi=#{value}
+        select * from doctor where keshi=#{value} order by yishengpingfen desc
     </select>
 
     <select id="fuzzySearch" parameterType="string" resultType="com.cn.hospital.pojo.Doctor">
-        select * from doctor where shanchang like concat('%',#{value},'%')
+        select * from doctor where shanchang like concat('%',#{value},'%') order by yishengpingfen desc 
     </select>
 
     <update id="addLiulancishu" parameterType="int">
